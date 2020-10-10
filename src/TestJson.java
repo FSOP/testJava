@@ -43,7 +43,7 @@ public class TestJson implements ActionListener {
     }
 
     public BufferedReader getFileBuffer(){
-        JFileChooser fc = new JFileChooser("C:\\Users\\ukouu\\IdeaProjects");
+        JFileChooser fc = new JFileChooser();
         BufferedReader br = null;
         JPanel panel = new JPanel();
 
