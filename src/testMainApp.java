@@ -5,6 +5,7 @@ public class testMainApp extends JFrame{
     private JButton button1;
     private JButton button2;
     JLabel testLabel;
+    private JButton testJsonButton;
     static testMainApp app;
 
 
@@ -19,6 +20,7 @@ public class testMainApp extends JFrame{
 
         button1.addActionListener(new Button1(this));
         button2.addActionListener(new button2(this));
+        testJsonButton.addActionListener(new TestJson());
 
     }
 

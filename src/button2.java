@@ -6,6 +6,7 @@ public class button2 implements ActionListener{
     public button2(testMainApp app){
         superapp = app;
     }
+
     @Override
     public void actionPerformed(ActionEvent e){
         System.out.println("button2 action performed");
