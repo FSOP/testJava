@@ -22,8 +22,10 @@ public class TestJson implements ActionListener {
             //System.out.println(data.readLine());
             JSONArray jarray = (JSONArray) parser.parse(data.readLine());
             JSONObject obj = (JSONObject) jarray.get(1);
+
             System.out.println("Number of CDMs: "+jarray.size());
             System.out.println("Number of Objects : "+obj.size());
+
             Set key = obj.keySet();
 
             Iterator<String> iter = key.iterator();
@@ -43,12 +45,11 @@ public class TestJson implements ActionListener {
     }
 
     public BufferedReader getFileBuffer(){
-        JFileChooser fc = new JFileChooser("C:\\Users\\ukouu\\IdeaProjects");
+        JFileChooser fc = new JFileChooser();
         BufferedReader br = null;
         JPanel panel = new JPanel();
 
         try {
-
             fc.showOpenDialog(panel);
             br = new BufferedReader(new FileReader(fc.getSelectedFile().getAbsoluteFile()));
 

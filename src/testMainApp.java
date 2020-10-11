@@ -1,3 +1,6 @@
+import CDMman.CDMdownload;
+import DailyReport.ReportMaker;
+
 import javax.swing.*;
 
 public class testMainApp extends JFrame{
@@ -6,6 +9,8 @@ public class testMainApp extends JFrame{
     private JButton button2;
     JLabel testLabel;
     private JButton testJsonButton;
+    private JButton testCDMdownloadButton;
+    private JButton testReportMakerButton;
     static testMainApp app;
 
 
@@ -21,6 +26,8 @@ public class testMainApp extends JFrame{
         button1.addActionListener(new Button1(this));
         button2.addActionListener(new button2(this));
         testJsonButton.addActionListener(new TestJson());
+        testCDMdownloadButton.addActionListener(new CDMdownload());
+        testReportMakerButton.addActionListener(new ReportMaker());
 
     }
 
