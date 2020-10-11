@@ -1,0 +1,4 @@
+http://repo.e-iceblue.com/nexus/content/groups/public/e-iceblue/spire.doc.free/3.9.0/
+https://repo1.maven.org/maven2/com/googlecode/json-simple/json-simple/1.1.1/
+
+https://www.c-sharpcorner.com/article/how-to-perform-mail-merge-in-word-document-in-java/
