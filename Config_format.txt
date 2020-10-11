@@ -1,0 +1,8 @@
+$ 주석
+UserID =
+UserPW =
+SPID = 
+SPPW = 
+testCDM = 
+currentdata = 
+CDMstruct = 
