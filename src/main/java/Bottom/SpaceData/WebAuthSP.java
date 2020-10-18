@@ -1,4 +1,4 @@
-package CDMman;
+package Bottom.SpaceData;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,13 +10,13 @@ import java.net.CookiePolicy;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
-public class WebSPAuth implements testInterface {
+public class WebAuthSP implements InterfaceSP {
     public HttpsURLConnection SPAuth(HashMap<String, String> conf){
-        String baseURL = testInterface.baseSPurl;
-        String authPath = testInterface.SPauthurl;
+        String baseURL = InterfaceSP.baseSPurl;
+        String authPath = InterfaceSP.SPauthurl;
         String userName = conf.get("SPID");
         String password = conf.get("SPPW");
-        String input = String.format(testInterface.SPauthformat, userName, password);
+        String input = String.format(InterfaceSP.SPauthformat, userName, password);
         String query;
 
         HttpsURLConnection conn = null;

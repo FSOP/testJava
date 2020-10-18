@@ -1,4 +1,4 @@
-package DailyReport;
+package Bottom.ReportMaker;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +12,8 @@ import com.spire.doc.FileFormat;
 import com.spire.doc.Section;
 import com.spire.doc.documents.Paragraph;
 
-public class ReportMaker implements ActionListener {
+public class DocxMaker implements ActionListener {
+
     @Override
     public void actionPerformed(ActionEvent e){
         merge_with_region();

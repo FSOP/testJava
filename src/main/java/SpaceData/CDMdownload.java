@@ -1,11 +1,16 @@
-package CDMman;
+package SpaceData;
+
+import Bottom.SpaceData.DbInsertCDM;
+import Bottom.ReadConfig;
+import Bottom.SpaceData.WebSPquery;
+import Bottom.SpaceData.InterfaceSP;
 
 import java.io.*;
 import java.util.HashMap;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CDMdownload implements ActionListener, testInterface {
+public class CDMdownload implements ActionListener, InterfaceSP {
     /*
         CDM 다운로드 클래스
         1. 마지막 Creation_date 날짜 불러옴
@@ -29,16 +34,16 @@ public class CDMdownload implements ActionListener, testInterface {
         String lastCDMcreationdate = "2020-10-10 10:00:00";
 
         String query = queryBuilder(lastCDMcreationdate);
-        newCDM = sp.spquery(query);
-        //newCDM = testCDM(conf.get("testCDM"));
-
+        //newCDM = sp.spquery(query);
+        newCDM = testCDM(conf.get("testCDM"));
+        System.out.println(newCDM);
         new DbInsertCDM().insertCDM(newCDM, conf);
 
 
     }
 
     public String queryBuilder(String reftime){
-        String url = testInterface.baseSPurl + String.format(testInterface.queryCDM, reftime);
+        String url = InterfaceSP.baseSPurl + String.format(InterfaceSP.queryCDM, reftime);
         url = url.replace(" ","%20");
         url = url.replace(">", "%3E");
         url = url.replace("=","%3D");

@@ -1,20 +1,17 @@
-package CDMman;
+package Bottom;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.ResultSet;
 import java.sql.PreparedStatement;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 public class DbBottom {
-    static Connection conn = null;
-    Statement state;
+    public Connection conn = null;
+    public Statement state;
     PreparedStatement pstmt;
-    String dbloc = "data/currentdata.txt?journal_mode=off";
-    String dbURL = "jdbc:sqlite:" + dbloc;
+    String dbloc = "C:\\Users\\User\\IdeaProjects\\currentdata.txt";
+    String dbURL = "jdbc:sqlite:" + dbloc +"?journal_mode=off";
 
     public void initDB(){
         try{
@@ -35,7 +32,20 @@ public class DbBottom {
         } catch (SQLException e){
             System.out.println(e.getMessage());
         }
+    }
 
+    public void closeConn(Connection conn){
+        try {
+            state.close();
+            conn.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public Statement getStatement(){
+        return state;
     }
 
 

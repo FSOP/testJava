@@ -1,4 +1,4 @@
-package CDMman;
+package Bottom.SpaceData;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,7 @@ import javax.net.ssl.HttpsURLConnection;
 import java.util.HashMap;
 
 
-public class WebSPquery extends WebSPAuth{
+public class WebSPquery extends WebAuthSP {
     HashMap<String, String> conf = new HashMap<String, String>();
     /*
 

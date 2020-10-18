@@ -1,4 +1,6 @@
-package CDMman;
+package Bottom.SpaceData;
+
+import Bottom.ReadConfig;
 
 import java.util.HashMap;
 

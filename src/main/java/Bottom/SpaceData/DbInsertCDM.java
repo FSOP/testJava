@@ -1,7 +1,11 @@
-package CDMman;
+package Bottom.SpaceData;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import Bottom.DbBottom;
+import Bottom.JsonHandler;
+import Bottom.SpaceData.CDMstructure;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.util.HashMap;
@@ -12,11 +16,12 @@ public class DbInsertCDM extends DbBottom {
         initDB(conf.get("currentdata"));
 
         queryMaker(new CDMstructure().CDMstruct(conf.get("CDMstruct")),
-                new JsonHandler().jsonhanle(str_cdms));
+                new JsonHandler().jsonhanle(str_cdms), conf.get("currentdata"));
 
     }
 
-    public void queryMaker(HashMap<String, String> cdmstruct, JSONArray arrayCDM){
+    public void queryMaker(HashMap<String, String> cdmstruct, JSONArray arrayCDM, String db_loc){
+        initDB(db_loc);
         String query = "insert into cdm (";
         String querytail = "";
 
@@ -29,7 +34,7 @@ public class DbInsertCDM extends DbBottom {
 
         try {
 
-            pstmt = conn.prepareStatement(query);
+            PreparedStatement pstmt = conn.prepareStatement(query);
 
             for (Object tcdm : arrayCDM){
                 JSONObject cdm = (JSONObject) tcdm;

@@ -1,4 +1,4 @@
-package CDMman;
+package Bottom;
 
 import java.io.FileReader;
 import java.io.IOException;
