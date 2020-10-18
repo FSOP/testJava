@@ -1,5 +1,7 @@
-import javax.swing.*;
-import java.awt.*;
+package Panels;
+
+import Panels.testMainApp;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

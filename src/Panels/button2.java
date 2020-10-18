@@ -1,3 +1,7 @@
+package Panels;
+
+import Panels.testMainApp;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -9,7 +13,7 @@ public class button2 implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e){
-        System.out.println("button2 action performed");
+        System.out.println("Panels.button2 action performed");
         superapp.setTestLabel("test");
 
     }

@@ -1,3 +1,5 @@
+package Panels;
+
 import DailyReport.DailyReport;
 
 import javax.swing.*;
@@ -24,15 +26,15 @@ public class ReportPanel extends  JFrame{
         pack();
         setTitle("ReportMaker");
 
-        buttonReportMake.addActionListener(new DailyReport());
-
+        DailyReport dailyreport = new DailyReport(this);
+        buttonReportMake.addActionListener(dailyreport);
     }
 
     public HashMap get_panel_data(){
         HashMap<String, String> panel_data = new HashMap<>();
 
         panel_data.put("who_make",textField1.getText());
-        panel_data.put("status_sensor1",comboBox1.getToolTipText());
+        panel_data.put("status_sensor1",(String) comboBox1.getSelectedItem());
 
         return panel_data;
     }

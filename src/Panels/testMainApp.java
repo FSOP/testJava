@@ -1,6 +1,6 @@
-import DailyReport.*;
+package Panels;
+
 import SpaceData.*;
-import Bottom.ReportMaker.DocxMaker;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
