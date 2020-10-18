@@ -1,5 +1,6 @@
 Class DbReportCat extends XmlBottom {
-String nations[] = ['US', 'SKOR'];
+    String nations[] = ['US', 'SKOR'];
+
  public void reportCat(){
   JSONObject current-cat = new JSONObject();
   JSONObject diff-cat = new JSONObject;
@@ -18,11 +19,11 @@ String nations[] = ['US', 'SKOR'];
     }
 
    for (String nat: nations){
-     diff-cat.put();
+     diff-cat.put(nat,current-cat.get(nat)-yesterday-cat.get(nat));
    }
   }
 
-
+ 
   public HashMap get-yesterday-cat(){
     initDB();
     String query-yesterday = "select insertdate, summary-data from cat-summary order by insertdate desc limit 1";
