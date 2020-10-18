@@ -1,9 +1,9 @@
 Class DbReportCat extends XmlBottom {
 String nations[] = ['US', 'SKOR'];
  public void reportCat(){
-  HashMap<String, Integer> current-cat = new hashmap<>();
-  HashMap<String, Integer> diff-cat = new HashMap<>();
-  HashMap<String, Integer> yesterday-cat = new HashMap<>();
+  JSONObject current-cat = new JSONObject();
+  JSONObject diff-cat = new JSONObject;
+  JSONObjectyesterday-cat = get-yesterday-cat();
 
 
   String query = "select nation, count(*) from satcat where group by nations";
@@ -14,13 +14,17 @@ String nations[] = ['US', 'SKOR'];
       String nation = res.getString(1);
       int val = res.getInt(2);
       
-      current-cat.add(nation, val);
+      current-cat.put(nation, val);
     }
+
+   for (String nat: nations){
+     diff-cat.put();
+   }
   }
+
 
   public HashMap get-yesterday-cat(){
     initDB();
-    HashMap<String, Integer> yesterday-cat = new HashMap<>();
     String query-yesterday = "select insertdate, summary-data from cat-summary order by insertdate desc limit 1";
     
     ResultSet res = state.executeQuery(query);
@@ -28,7 +32,8 @@ String nations[] = ['US', 'SKOR'];
 
     JSONObject jobj = parser.parse(val);
 
-
+    closeConn();
+    return jobj
   }
 
 }
