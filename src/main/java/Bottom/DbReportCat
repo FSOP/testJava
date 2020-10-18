@@ -1,0 +1,6 @@
+Class DbReportCat extends XmlBottom {
+ public void reportCat(){
+
+ }
+
+}
